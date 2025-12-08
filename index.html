@@ -86,6 +86,27 @@
             background: #2b2b2b;
         }
 
+        details summary {
+        cursor: pointer;
+        list-style: none;
+        color: #4da6ff;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        }
+    
+        /* Icône chevron */
+        details summary::before {
+            content: "▶"; 
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+    
+        /* Chevron qui tourne quand c'est ouvert */
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
     </style>
 </head>
 <body>
@@ -145,7 +166,7 @@
         </div>
 
         <details>
-        <summary style="cursor: pointer; display: inline-block; margin-top: 10px; padding: 6px 10px; border: 1px solid #333; border-radius: 5px; background: #1f1f1f; color: #4da6ff;">En savoir plus</summary>
+        <summary></summary>
         
             <p style="margin-top: 10px;">
                 Application mobile permettant de répertorier des films déjà vus et de mettre en favoris ceux que l’on souhaite voir, depuis une API de base de données. Projet réalisé en équipe de 4. (4 mois)
